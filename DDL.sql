@@ -23,10 +23,12 @@ Drop Table _tableName;
 --! Alter
 
 -- Alter add attribute of table
-Alter Table _tableName Add _attribute _dataType;
+Alter Table _tableName 
+    Add _attribute _dataType;
 
 -- Alter drop attribute
-Alter Table _tableName Drop _attribute;
+Alter Table _tableName 
+    Drop _attribute;
 
 -- Alter change name of table
 Alter Table _tableName Rename TO _newName;
@@ -44,7 +46,8 @@ Alter Table _tableName
     Add Primary Key (_attribute);
 
 -- Alter delete Primary Key
-Alter Table _tableName drop Primary Key;
+Alter Table _tableName 
+    drop Primary Key;
 
 -- Alter Add Foreign Key
 Alter Table _tableName 
