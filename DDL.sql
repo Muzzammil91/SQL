@@ -33,30 +33,37 @@ Alter Table _tableName Rename TO _newName;
 
 -- Alter update dataType + constraint of attribute
 ALTER TABLE _tableName
+    modify _attribute _datatype {_constraint};
+
+-- Alter add constraint
+ALTER TABLE _tableName
+    modify _attribute _datatype _constraint;
+
+-- Alter drop constraint
+ALTER TABLE _tableName
     modify _attribute _datatype;
-
---? Alter add constraint
-Alter Table _tableName Modify _attribute _constraint;
-
---? Alter drop constraint
-Alter Table _tableName Alter _attribute Drop _constraint;
+-- Do same {Like add} just do not write constraint
 
 --? Alter Rename attribute
 Alter Table _tableName
     rename column _oldName to _newName;
 
 -- Alter Add Primary Key
-Alter Table _tableName Add Primary Key (_attribute);
+Alter Table _tableName 
+    Add Primary Key (_attribute);
 
 -- Alter delete Primary Key
 Alter Table _tableName drop Primary Key;
 
 -- Alter Add Foreign Key
-Alter Table _tableName add constraint _attributeThatIsForeignKey 
-    Foreign Key (_uniqueIdentifier) References _tableName(_attribute);
+Alter Table _tableName 
+    add constraint _attributeThatIsForeignKey 
+    Foreign Key (_uniqueIdentifier) 
+    References _tableName(_attribute);
 
 -- Alter delete Foreign Key
-Alter Table _tableName drop Foreign Key _attributeThatIsForeignKey;
+Alter Table _tableName 
+    drop Foreign Key _attributeThatIsForeignKey;
 
 --! Truncate
 
