@@ -31,21 +31,22 @@ Alter Table _tableName Drop _attribute;
 -- Alter change name of table
 Alter Table _tableName Rename TO _newName;
 
--- Alter change dataType of attribute
+--? Alter change dataType of attribute
 ALTER TABLE _tableName
     ALTER COLUMN _attribute _datatype;
 
--- Alter add constraint
+--? Alter add constraint
 Alter Table _tableName Modify _attribute _constraint;
 
--- Alter drop constraint
+--? Alter drop constraint
 Alter Table _tableName Alter _attribute Drop _constraint;
 
--- Alter update constraint
+--? Alter update constraint
 Alter Table _tableName Alter _attribute set _constraint;
 
--- Alter Rename attribute
-Alter Table _tableName Rename attribute;
+--? Alter Rename attribute
+Alter Table _tableName
+    rename column _oldName to _newName;
 
 -- Alter Add Primary Key
 Alter Table _tableName Add Primary Key (_attribute);
