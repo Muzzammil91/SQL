@@ -31,22 +31,13 @@ Alter Table _tableName Drop _attribute;
 -- Alter change name of table
 Alter Table _tableName Rename TO _newName;
 
--- Alter update dataType + constraint of attribute
-ALTER TABLE _tableName
+-- Alter update dataType {writing constraint not necessary} + add constraint + update constraint of attribute + delete constraint {Do not write constraint}
+Alter Table _tableName
     modify _attribute _datatype {_constraint};
 
--- Alter add constraint
-ALTER TABLE _tableName
-    modify _attribute _datatype _constraint;
-
--- Alter drop constraint
-ALTER TABLE _tableName
-    modify _attribute _datatype;
--- Do same {Like add} just do not write constraint
-
---? Alter Rename attribute
+-- Alter Rename attribute {writing constraint not necessary}
 Alter Table _tableName
-    rename column _oldName to _newName;
+    change _oldName _newName _datatype {_constraint};
 
 -- Alter Add Primary Key
 Alter Table _tableName 
