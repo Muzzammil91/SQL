@@ -32,7 +32,8 @@ Alter Table _tableName Drop _attribute;
 Alter Table _tableName Rename TO _newName;
 
 -- Alter change dataType of attribute
-
+ALTER TABLE _tableName
+    ALTER COLUMN _attribute _datatype;
 
 -- Alter add constraint
 Alter Table _tableName Modify _attribute _constraint;
